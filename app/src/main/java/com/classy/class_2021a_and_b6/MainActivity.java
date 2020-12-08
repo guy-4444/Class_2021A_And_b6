@@ -2,10 +2,16 @@ package com.classy.class_2021a_and_b6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,15 +38,22 @@ public class MainActivity extends AppCompatActivity {
         mySPV2.putString(USERNAME, "Elena");
         String name2 = mySPV2.getString(USERNAME, "NA");
 
+
         // V3
         /*
+            No Constructor (Singleton)
             No Context
             No Instance
             Performance
-            East to read and write
+            Easy to read and write
          */
+        MySPV3.getInstance().getString(USERNAME, "Elena");
+        String name3 = MySPV3.getInstance().getString(USERNAME, "NA");
 
+
+        MySignal.getInstance().vibrate();
     }
+
 
 
 
